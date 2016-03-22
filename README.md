@@ -19,7 +19,7 @@ class Car {
 }
 ```
 
-This is a pretty simple concept and allows us to have som control over some of
+This is a pretty simple concept and allows us to have some control over some of
 the inner workings of our class at the instance level. Let's look at it in action:
 
 ```bash
