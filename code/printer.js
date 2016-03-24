@@ -1,8 +1,8 @@
-import { strip } from './strings'
-import { calculate } from './calculator'
+import { strip } from './strings';
+import { calculate } from './calculator';
 
 export function printReceipt(items) {
-  var [total, totalTax] = calculate({ items })
+  var {total, totalTax} = calculate({ items });
 
   return strip`
     ${items.map(item => item.price).join('\n')}
@@ -12,5 +12,5 @@ export function printReceipt(items) {
     Tax: ${totalTax}
     ${'='.repeat(30)}
     Total: ${total + totalTax}
-  `
+  `;
 }

@@ -1,10 +1,10 @@
 export function strip(pieces, ...value) {
-  var str = ''
+  let str = '';
 
   pieces.forEach((piece, index) => {
-    let val = value[index] || ''
-    str = str + piece + val
-  })
+    let val = value[index] || '';
+    str += piece + val;
+  });
 
-  return str.replace(/^\s*/gm, '')
+  return str.replace(/^\s*/gm, '');
 }

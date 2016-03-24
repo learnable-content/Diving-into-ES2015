@@ -7,14 +7,14 @@ Let's start with our `strip` function in the `strings.js` file:
 
 ```js
 export function strip(pieces, ...value) {
-  var str = ''
+  let str = '';
 
   pieces.forEach((piece, index) => {
     let val = value[index] || ''
     str = str + piece + val
-  })
+  });
 
-  return str.replace(/^\s*/gm, '')
+  return str.replace(/^\s*/gm, '');
 }
 ```
 
@@ -31,7 +31,7 @@ that:
 
 ```js
 export function printReceipt(items) {
-  var [total, totalTax] = calculate({ items })
+  let {total, totalTax} = calculate({ items });
 
   return strip`
     ${items.map(item => item.price).join('\n')}
@@ -41,7 +41,7 @@ export function printReceipt(items) {
     Tax: ${totalTax}
     ${'='.repeat(30)}
     Total: ${total + totalTax}
-  `
+  `;
 }
 ```
 
@@ -49,20 +49,24 @@ That's better! We've reduced that callback function to three words and one
 fat arrow! And it's still very readable and clear what's going on. This is
 great!
 
+Did you also notice that we were able to drop the parentheses from the callback
+function we used when mapping over the items? You can do this when there is
+only one argument being passed into the function. Really cool!
+
 The last change we're going to make is in the `calculate` function in the
 `calculator.js` file. Here we're going to do the same thing we did in the
 `strip` function:
 
 ```js
 export function calculate({ taxRate = 8, items = [] }) {
-  var total = 0, totalTax = 0
+  let total = 0, totalTax = 0;
 
   items.forEach(item => {
-    total += item.price
-    totalTax += calculateTax({ taxRate, ...item })
-  })
+    total += item.price;
+    totalTax += calculateTax({ taxRate, ...item });
+  });
 
-  return [total, totalTax]
+  return {total, totalTax};
 }
 ```
 
