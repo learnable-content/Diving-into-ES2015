@@ -63,7 +63,7 @@ We have sent your welcome package to fred@slaterock.com
 
 Wait a minute?!?! What the heck is going on here? Ok let's break it down. The
 first thing we need is a function called `strip` that takes multiple arguments.
-Let's create this function. The purpose here will be to strip all leading white
+Let's create this function. The purpose here will be to strip all surrounding white
 space from the multiline string.
 
 ```js
