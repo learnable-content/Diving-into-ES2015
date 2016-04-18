@@ -23,7 +23,7 @@ Not a huge change here, all we did was keep two separate running totals for
 price and tax, and returned them in as an array.
 
 We are going to use the `strip` function from the last lesson to create this
-receipt, so let's go ahead and make a new file called `strings.js` and
+receipt, so let's go ahead and make a new file called `utils-strings.js` and
 paste in the strip function:
 
 ```js
@@ -42,7 +42,7 @@ a function that will print out a receipt! Lets create a file called `printer.js`
 and create our function:
 
 ```js
-import { strip } from './strings';
+import { strip } from './utils-strings';
 import { calculate } from './calculator';
 
 export function printReceipt(items) {
@@ -62,7 +62,7 @@ export function printReceipt(items) {
 
 That's it! So what's happening here? The first thing we did was calculate the
 total price and total tax using our calculate function, and assigned the values
-to `total` and `totalTax` variables using array matching. Then we used our custom
+to `total` and `totalTax` variables using destructuring. Then we used our custom
 template literal called `strip` to print out our receipt! Let's try it out in
 the console:
 
