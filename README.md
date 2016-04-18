@@ -8,7 +8,7 @@ for an object. Let's dive right in shall we?
 ## Array Matching
 
 The first type of destructuring we're going to talk about is array matching.
-Put simply, this feature allows you to assign a list of variables to matching
+Put simply, this feature allows you to assign a list of variables from matching
 indices in arrays. Let's take a look at this code example so that we can
 better see how this works.
 
@@ -19,8 +19,18 @@ better see how this works.
 -> 1 2 3
 ```
 
-As you can see there, we were able to easily assign three variables, `a`, `b`,
-and `c`, to variables that match the indices of the array that we matched.
+As you can see there, we were able to easily assign to three variables, `a`, `b`,
+and `c`, the values that matched on the indices of the array.
+
+If we want to only match on some of our indices, we can use the spread operator like this:
+
+```js
+> var list = [1, 2, 3, 4, 5]
+> var [a, b, ...c] = list
+> console.log(a, b, c)
+-> 1 2 [3, 4, 5]
+```
+
 It is also possible to skip an index when doing this type of assignment.
 
 ```js
@@ -114,8 +124,8 @@ everything we have covered so far.
 
 When attempting to assign a variable via destructuring, if the indice or object
 key does not exist, that variable will simply be `undefined`, instead of
-throwing an error. That's not all though, we can actually assign a default
-value if we want also! Let's see this in action.
+throwing an error. That's not all though, we can also assign a default
+value if we want! Let's see this in action.
 
 ```js
 > var list = [1, 2]
