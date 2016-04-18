@@ -35,7 +35,7 @@ check if they exist like we did above. Awesome!
 ## Rest Parameters
 
 We're not done yet! There's another great new feature that we can use in a
-variety of ways to make parameter decalrations for functions incredibly
+variety of ways to make parameter declarations for functions incredibly
 dynamic and easy to use. The next one we'll talk about is rest parameters.
 
 Using rest parameters, we can allow a dynamic number of arguments to be passed
@@ -56,7 +56,7 @@ using the spread operator, it returns all of those parameters as an array.
 We can then just iterate over the collection of params and perform our
 addition! This is very handy in a lot of cases.
 
-It also works when you have required parameters:
+It also works when you have leading parameters:
 ```js
 function product(multiplier = 1, ...numbers) {
   let total = 0;
